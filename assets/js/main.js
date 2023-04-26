@@ -106,7 +106,7 @@ createApp({
                 },
                 {
                     name: 'Claudia',
-                    avatar: './img/avatar_5.jpg',
+                    avatar: './img/avatar_6.jpg',
                     visible: true,
                     messages: [
                         {
@@ -172,6 +172,8 @@ createApp({
 
     },
     methods: {
-    
+        cambioImg(index) {
+            this.notification = false
+        },
     }
 }).mount('#app')

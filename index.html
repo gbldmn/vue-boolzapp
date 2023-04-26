@@ -16,7 +16,7 @@
              <!-- header parte sinistra -->
                 <div class="d-flex justify-content-between aligh-items-center header">
                     <div class="d-flex justify-content-between aligh-items-center g">
-                         <img src="img/avatar_1.jpg" alt="">
+                         <img src="img/avatar_io.jpg" alt="">
                          <span>Sofia</span>
                     </div>
                     <div class="icone">
@@ -30,13 +30,16 @@
                     <div class="box1">
                         <i class="fa-regular fa-bell-slash"></i>
                         <span>Ricevi notifiche di nuovi messaggi</span><br>
-                        <a href="">attiva notifiche desktop</a><br>
-                        <input class="ricerca" type="text" placeholder="cerca o inizia una nuova chat">
-                    </div>
+                        <a  href="">attiva notifiche desktop</a><br>
+                        <input class="ricerca p-2 ms-2" type="text" placeholder="cerca o inizia una nuova chat">
+                    </div> 
                     <div v-for="(element, index) in contacts" class="box">
                         <img v-bind:src="element.avatar" alt="">
-                        <span>{{element.name}}</span><br>
-                        <span class="color">ultimo messaggio inviato</span>
+                        <div class="d-inline-block">
+                           <span>{{element.name}}</span><br>
+                           <span class="color">ultimo messaggio inviato</span>
+                           <div class="best color"><span>12:00</span></div>
+                        </div>
                     </div>
                     <!-- <div class="box">
                         <img src="img/avatar_3.jpg" alt="">
@@ -80,9 +83,11 @@
                 <div class="d-flex justify-content-between aligh-items-center header">
                    
                     <div>
-                         <img class="image" src="img/avatar_2.jpg" alt="">
-                         <span>Michele</span><br>
-                        <div> <span class="color cont">ultimo accesso oggi</span></div>
+                         <img class="image" src="img/avatar_1.jpg" alt="">
+                           <div class="d-inline-block mt-1">
+                              <span>Michele</span><br>
+                              <span class="color">ultimo accesso oggi</span>
+                           </div>
                     </div>
                     <div class="icone">
                         <i class="fa-solid fa-magnifying-glass"></i>
@@ -92,9 +97,15 @@
                 </div>
              <!-- parte destra centro -->
                 <div class="medium">
-                    <div class="verde"><p>hai portato a spasso il cane?</p></div>
-                    <div class="verde"><p>ricordati di stendere i panni dgasdfdhgfjhhjdfhjhj</p></div>
-                    <div class="white"><p>tutto fatto</p></div>
+                    <div class="verde"><p>hai portato a spasso il cane?</p>
+                        <span class="color">13:40</span>
+                    </div>
+                    <div class="verde"><p>ricordati di stendere i panni</p>
+                        <span class="color">15:50</span>
+                    </div>
+                    <div class="white"><p>tutto fatto</p>
+                        <span class="color">18:00</span>
+                    </div>
                 </div>
              <!--  parte destra inferiore  -->
                 <div class="header d-flex justify-content-between aligh-items-center">

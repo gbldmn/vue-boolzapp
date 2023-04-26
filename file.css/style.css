@@ -12,9 +12,126 @@ body {
     background: linear-gradient(180deg, #019789 0%,#019789 15%, #d9dbd5 15%, #d9dbd5 100%);
     background-repeat: no-repeat;
 }
+.flex {
+    display: flex;
+}
 
 .contenitore {
     height: 90vh;
     width: 160vh;
     background-color: white;
+}
+.sliderSx {
+    height: 90vh;
+    width: 60vh;
+    background-color: bisque;
+}
+.sliderDx {
+    height: 90vh;
+    width: 100vh;
+    background-image: url("../img/mine.jpg");
+}
+
+.header {
+    height: 10vh;
+    background-color: #EAEAEA;
+    width: 100%;
+    border-left: 2px solid rgb(155, 149, 14);
+}
+img {
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+    display: inline-block;
+}
+.icone i {
+    margin-left: 0,5rem;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    cursor: pointer;
+    color: #019789;
+}
+.g img, span {
+    margin-left: 1rem;
+    margin-top: 10px;
+    margin-right: 0,5rem;
+    cursor: pointer;
+}
+.g span {
+    margin-left: 1rem;
+    margin-top: 20px;
+    margin-right: 0,5rem;
+    cursor: pointer;
+}
+/* main parte sinistra */
+
+.main {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    overflow: scroll;
+}
+.box {
+    width: 100%;
+    height: 15%;
+    background-color: #FFF;
+}
+.box img, i, a {
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 15px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.box1 a {
+    margin-top: 10px;
+    margin-left: 4rem;
+    font-size: 15px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;  
+}
+.box span {
+    margin-left: 50px;
+}
+.color {
+    color: #a4a49e;
+}
+.box:hover {
+    background-color: #c9c9c3;
+}
+.ricerca {
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+    width: 100%;
+    margin-bottom: 3px;
+}
+.box1 {
+    background-color: #8EDAFC;
+}  
+/* inizio parte destra */
+
+.flex2 {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: space-between;
+}
+.cont {
+    margin-left: 4rem;
+}
+.image {
+    margin-left: 1rem;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.tipe {
+    width: 590px;
+    height: 90%;
+    margin-top: 3px;
+}
+i {
+    margin-left: 0,5rem;
+    margin-top: 2rem;
+    margin-right: 1rem;
+    cursor: pointer;
+    color: #019789;
+    font-size: 20px; 
 }

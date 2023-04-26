@@ -30,6 +30,7 @@ body {
     height: 90vh;
     width: 100vh;
     background-image: url("../img/mine.jpg");
+    overflow: scroll;
 }
 
 .header {
@@ -134,4 +135,27 @@ i {
     cursor: pointer;
     color: #019789;
     font-size: 20px; 
+}
+/* sezione centrale parte destra */
+.medium {
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.verde {
+    background-color: #D5F9BA;
+    padding: 2 rem;
+    width: 20%;
+    border-radius: 10px;
+    border: 1px solid black;
+    margin-left: 80%;
+    margin-top: 20px;
+}
+.white {
+    background-color: white;
+    padding: 2 rem;
+    width: 20%;
+    border-radius: 10px;
+    border: 1px solid black
 }

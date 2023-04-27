@@ -6,7 +6,6 @@ createApp({
             currentActive: 0,
             newText:'',
             ricerca:'',
-            indirizzo:[],
             contacts: [
                 {
                     name: 'Michele',
@@ -190,7 +189,9 @@ createApp({
                         message: this.newText,
                         status: 'sent'
                     }
+                    
                 );
+                  this.nexText = ''
                 setTimeout(function(){
                     messaggi.push(
                         {
@@ -200,13 +201,16 @@ createApp({
                         }
                     );
                 }, 1000 );
-                this.nexText = ''
-            }
+               
+            } 
+                 
         },
         cercaChat(){
             this.contacts.forEach(element => {
                 if (!element.name.includes(this.ricerca) && this.ricerca != ''){
                     element.visible = false
+                } else {
+                    element.visible= true;
                 }
                 
             });

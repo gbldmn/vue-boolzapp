@@ -31,17 +31,17 @@
                         <i class="fa-regular fa-bell-slash"></i>
                         <span>Ricevi notifiche di nuovi messaggi</span><br>
                         <a  href="">attiva notifiche desktop</a><br>
-                        <input class="ricerca p-2 ms-2" type="text" placeholder="cerca o inizia una nuova chat" v-model="ricerca" @keyUp="cercaChat">
+                        <input class="ricerca p-1 ms-2" type="text" placeholder=" cerca o inizia una nuova chat" v-model="ricerca" @keyUp="cercaChat">
                     </div> 
-                    <div v-for="(element, index) in contacts" class="box d-flex"  @click="cambioDati(index)">
+                    <div v-for="(element, index) in contacts" class="box d-flex  " :class="(element.visible == true) ? 'd-block' : 'd-none' " @click="cambioDati(index)">
                         <div>
-                        <img v-bind:src="element.avatar" alt="">
+                           <img v-bind:src="element.avatar" alt="">
                         </div>
                         <div class="d-inline-block">
                            <span>{{element.name}}</span><br>
                            <span class="color">{{ element.messages[element.messages.length - 1].message }}</span>
-
-                           <div class="best color"><span>{{ element.messages[element.messages.length - 1].date }}</span></div>
+                        </div>
+                           <div class="color best"><span>{{ element.messages[element.messages.length - 1].date }}</span>
                         </div>
                     </div>
                     <!-- <div class="box">
@@ -99,6 +99,7 @@
                     </div>
                 </div>
              <!-- parte destra centro -->
+            <div class="cnn">
                 <div class="medium">
                     <div v-for="(element, index) in contacts[currentActive].messages"
                      :class="element.status == 'sent' ? 'verde' : 'white' "
@@ -112,13 +113,14 @@
                         <span class="color">18:00</span>
                     </div> -->
                 </div>
+            </div>    
              <!--  parte destra inferiore  -->
                 <div class="header d-flex justify-content-between aligh-items-center">
                     <div>
                         <i class="fa-regular fa-face-smile"></i>
                     </div>
                     <div>
-                        <input class="tipe" type="text" placeholder="scrivi un messaggio"  @keyUp.enter="invia" v-model="newText">
+                        <input class="tipe" type="text" placeholder="  scrivi un messaggio"  @keyUp.enter="invia" v-model="newText">
                     </div>
                     <div>
                         <i class="fa-solid fa-microphone"></i>

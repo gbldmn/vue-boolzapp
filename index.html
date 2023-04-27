@@ -31,7 +31,7 @@
                         <i class="fa-regular fa-bell-slash"></i>
                         <span>Ricevi notifiche di nuovi messaggi</span><br>
                         <a  href="">attiva notifiche desktop</a><br>
-                        <input class="ricerca p-2 ms-2" type="text" placeholder="cerca o inizia una nuova chat">
+                        <input class="ricerca p-2 ms-2" type="text" placeholder="cerca o inizia una nuova chat" v-model="ricerca" @keyUp="cercaChat">
                     </div> 
                     <div v-for="(element, index) in contacts" class="box d-flex"  @click="cambioDati(index)">
                         <div>
@@ -100,15 +100,17 @@
                 </div>
              <!-- parte destra centro -->
                 <div class="medium">
-                    <div class="verde"><p> {{contacts[currentActive].messages[ contacts[currentActive].messages.length - 1 ].message}}</p>
+                    <div v-for="(element, index) in contacts[currentActive].messages"
+                     :class="element.status == 'sent' ? 'verde' : 'white' "
+                    class=""><p>{{element.message}}</p>
                         <span class="color">13:40</span>
                     </div>
-                    <div class="verde"><p> {{contacts[currentActive].messages[ contacts[currentActive].messages.length - 2 ].message}}</p>
+                    <!-- <div class="verde"><p> {{contacts[currentActive].messages[ contacts[currentActive].messages.length - 2 ].message}}</p>
                         <span class="color">15:50</span>
                     </div>
-                    <div class="white"><p> {{contacts[currentActive].messages[ contacts[currentActive].messages.length -3].message}}</p>
+                    <div class="white"><p> {{contacts[currentActive].messages[ contacts[currentActive].messages.length - 3].message}}</p>
                         <span class="color">18:00</span>
-                    </div>
+                    </div> -->
                 </div>
              <!--  parte destra inferiore  -->
                 <div class="header d-flex justify-content-between aligh-items-center">
@@ -116,7 +118,7 @@
                         <i class="fa-regular fa-face-smile"></i>
                     </div>
                     <div>
-                        <input class="tipe" type="text" placeholder="scrivi un messaggio">
+                        <input class="tipe" type="text" placeholder="scrivi un messaggio"  @keyUp.enter="invia" v-model="newText">
                     </div>
                     <div>
                         <i class="fa-solid fa-microphone"></i>

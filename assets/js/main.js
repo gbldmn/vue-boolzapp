@@ -4,6 +4,9 @@ createApp({
     data() {
         return {
             currentActive: 0,
+            newText:'',
+            ricerca:'',
+            indirizzo:[],
             contacts: [
                 {
                     name: 'Michele',
@@ -176,5 +179,39 @@ createApp({
         cambioDati(index) {
             this.currentActive = index
         },
+
+        invia(){
+            let messaggi = this.contacts[this.currentActive].messages;
+            if(this.newText != ""){
+
+                messaggi.push(
+                    {
+                        date: '10/01/2020 15:51:00',
+                        message: this.newText,
+                        status: 'sent'
+                    }
+                );
+                setTimeout(function(){
+                    messaggi.push(
+                        {
+                            date: '10/01/2020 15:51:01',
+                            message: 'ok!!!!',
+                            status: 'received'
+                        }
+                    );
+                }, 1000 );
+                this.nexText = ''
+            }
+        },
+        cercaChat(){
+            this.contacts.forEach(element => {
+                if (!element.name.includes(this.ricerca) && this.ricerca != ''){
+                    element.visible = false
+                }
+                
+            });
+        }
+                                
     }
 }).mount('#app')
+

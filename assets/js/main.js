@@ -3,6 +3,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            currentActive: 0,
             contacts: [
                 {
                     name: 'Michele',
@@ -172,8 +173,8 @@ createApp({
 
     },
     methods: {
-        cambioImg(index) {
-            this.notification = false
+        cambioDati(index) {
+            this.currentActive = index
         },
     }
 }).mount('#app')

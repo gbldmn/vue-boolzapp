@@ -33,12 +33,15 @@
                         <a  href="">attiva notifiche desktop</a><br>
                         <input class="ricerca p-2 ms-2" type="text" placeholder="cerca o inizia una nuova chat">
                     </div> 
-                    <div v-for="(element, index) in contacts" class="box">
+                    <div v-for="(element, index) in contacts" class="box d-flex"  @click="cambioDati(index)">
+                        <div>
                         <img v-bind:src="element.avatar" alt="">
+                        </div>
                         <div class="d-inline-block">
                            <span>{{element.name}}</span><br>
-                           <span class="color">ultimo messaggio inviato</span>
-                           <div class="best color"><span>12:00</span></div>
+                           <span class="color">{{ element.messages[element.messages.length - 1].message }}</span>
+
+                           <div class="best color"><span>{{ element.messages[element.messages.length - 1].date }}</span></div>
                         </div>
                     </div>
                     <!-- <div class="box">
@@ -83,10 +86,10 @@
                 <div class="d-flex justify-content-between aligh-items-center header">
                    
                     <div>
-                         <img class="image" src="img/avatar_1.jpg" alt="">
+                         <img class="image" v-bind:src="contacts[currentActive].avatar" alt="">
                            <div class="d-inline-block mt-1">
-                              <span>Michele</span><br>
-                              <span class="color">ultimo accesso oggi</span>
+                              <span v-bind:class="contacts[currentActive].name">{{contacts[currentActive].name}}</span><br>
+                              <span class="color">ultimo accesso oggi {{contacts[currentActive].messages[ contacts[currentActive].messages.length - 1 ].date}}</span>
                            </div>
                     </div>
                     <div class="icone">
@@ -97,13 +100,13 @@
                 </div>
              <!-- parte destra centro -->
                 <div class="medium">
-                    <div class="verde"><p>hai portato a spasso il cane?</p>
+                    <div class="verde"><p> {{contacts[currentActive].messages[ contacts[currentActive].messages.length - 1 ].message}}</p>
                         <span class="color">13:40</span>
                     </div>
-                    <div class="verde"><p>ricordati di stendere i panni</p>
+                    <div class="verde"><p> {{contacts[currentActive].messages[ contacts[currentActive].messages.length - 2 ].message}}</p>
                         <span class="color">15:50</span>
                     </div>
-                    <div class="white"><p>tutto fatto</p>
+                    <div class="white"><p> {{contacts[currentActive].messages[ contacts[currentActive].messages.length -3].message}}</p>
                         <span class="color">18:00</span>
                     </div>
                 </div>

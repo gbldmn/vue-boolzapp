@@ -157,8 +157,9 @@ i {
     padding: 2 rem;
     border-radius: 10px;
     border: 1px solid black;
-    margin-left: 80%;
-    margin-top: 20px;
+     margin-left: 80%;
+    margin-top: 20px; 
+    width: 20%;
 }
 .white {
     background-color: white;

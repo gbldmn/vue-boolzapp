@@ -200,7 +200,7 @@ createApp({
                             status: 'received'
                         }
                     );
-                }, 1000 );
+                }, 2000 );
                
             } 
                  

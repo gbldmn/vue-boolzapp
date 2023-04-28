@@ -33,15 +33,16 @@
                         <a  href="">attiva notifiche desktop</a><br>
                         <input class="ricerca p-1 ms-2" type="text" placeholder=" cerca o inizia una nuova chat" v-model="ricerca" @keyUp="cercaChat">
                     </div> 
-                    <div v-for="(element, index) in contacts" class="box d-flex  " :class="(element.visible == true) ? 'd-block' : 'd-none' " @click="cambioDati(index)">
-                        <div>
-                           <img v-bind:src="element.avatar" alt="">
-                        </div>
+                    <div v-for="(element, index) in contacts" class="box d-flex justify-content-between " :class="(element.visible == true) ? 'd-block' : 'd-none' " @click="cambioDati(index)">
+                        <div class="">
+                           <img class="" v-bind:src="element.avatar" alt="">
                         <div class="d-inline-block">
                            <span>{{element.name}}</span><br>
-                           <span class="color">{{ element.messages[element.messages.length - 1].message }}</span>
+                           <span class="color ">{{ element.messages[element.messages.length - 1].message }}</span>
                         </div>
-                           <div class="color best"><span>{{ element.messages[element.messages.length - 1].date }}</span>
+                        </div>
+                           <div class="color best"><span class="margin">12:00</span>
+                            <!-- {{ element.messages[element.messages.length - 1].date }} -->
                         </div>
                     </div>
                     <!-- <div class="box">
@@ -100,7 +101,7 @@
                 </div>
              <!-- parte destra centro -->
             <div class="cnn">
-                <div class="medium">
+                <div class="medium ">
                     <div v-for="(element, index) in contacts[currentActive].messages"
                      :class="element.status == 'sent' ? 'verde' : 'white' "
                     class=""><p>{{element.message}}</p>

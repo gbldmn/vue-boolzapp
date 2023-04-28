@@ -188,10 +188,10 @@ createApp({
                         date: '10/01/2020 15:51:00',
                         message: this.newText,
                         status: 'sent'
-                    }
-                    
-                );
-                  this.nexText = ''
+                    } );
+                    this.newText = ''
+               
+                  
                 setTimeout(function(){
                     messaggi.push(
                         {
